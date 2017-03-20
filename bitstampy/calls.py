@@ -72,7 +72,7 @@ class APIPrivateCall(APICall):
         self.api_secret = api_secret
 
     def _get_nonce(self):
-        return str(int(time.time() * 1e6))
+        return str(int(time.time() * 1e7 ))
 
     def call(self, **params):
         nonce = self._get_nonce()
@@ -236,3 +236,9 @@ class APIWithdrawalRequestsCall(APIPrivateCall):
         for wr in response:
             wr['datetime'] = dt(wr['datetime'])
             wr['amount'] = Decimal(wr['amount'])
+
+class APITransferToMainCall(APIPrivateCall):
+    url = 'v2/transfer-to-main/'
+
+class APITransferFromMainCall(APIPrivateCall):
+    url = 'v2/transfer-from-main/'

@@ -152,3 +152,16 @@ def withdrawal_requests(client_id, api_key, api_secret):
         calls.APIWithdrawalRequestsCall(client_id, api_key, api_secret)
         .call()
     )
+
+def transfer_to_main(client_id, api_key, api_secret, amount, currency):
+    return (
+        calls.APITransferToMainCall(client_id, api_key, api_secret)
+         .call(amount=amount, currency=currency)
+    )
+
+def transfer_from_main(client_id, api_key, api_secret, amount, currency, subAccount):
+    return (
+        calls.APITransferFromMainCall(client_id, api_key, api_secret)
+         .call(amount=amount, currency=currency, subAccount=subAccount)
+    )
+
