@@ -159,9 +159,9 @@ def transfer_to_main(client_id, api_key, api_secret, amount, currency):
          .call(amount=amount, currency=currency)
     )
 
-def transfer_from_main(client_id, api_key, api_secret, amount, currency, subAccount):
+def transfer_from_main(client_id, api_key, api_secret, amount, currency, sub_account):
     return (
         calls.APITransferFromMainCall(client_id, api_key, api_secret)
-         .call(amount=amount, currency=currency, subAccount=subAccount)
+         .call(amount=amount, currency=currency, sub_account=sub_account)
     )
 

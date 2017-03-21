@@ -72,7 +72,7 @@ class APIPrivateCall(APICall):
         self.api_secret = api_secret
 
     def _get_nonce(self):
-        return str(int(time.time() * 1e7 ))
+        return str(int(time.time() * 1e7))
 
     def call(self, **params):
         nonce = self._get_nonce()
